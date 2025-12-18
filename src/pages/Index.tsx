@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { filterSchemes, Occupation, State, Scheme } from '@/data/schemes';
+import { Caste } from '@/components/SchemeForm';
 import Header from '@/components/Header';
 import SchemeForm from '@/components/SchemeForm';
 import SchemeResults from '@/components/SchemeResults';
@@ -18,6 +19,7 @@ const Index: React.FC = () => {
     ageGroup: string;
     occupation: Occupation;
     income: string;
+    caste: Caste;
     state: State;
   }) => {
     const eligibleSchemes = filterSchemes(data.occupation, data.state);
