@@ -12,7 +12,9 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Search, User, Calendar, Briefcase, Wallet, MapPin } from 'lucide-react';
+import { Search, User, Calendar, Briefcase, Wallet, MapPin, Users } from 'lucide-react';
+
+export type Caste = 'general' | 'obc' | 'sc' | 'st';
 
 interface SchemeFormProps {
   onSubmit: (data: {
@@ -20,6 +22,7 @@ interface SchemeFormProps {
     ageGroup: string;
     occupation: Occupation;
     income: string;
+    caste: Caste;
     state: State;
   }) => void;
 }
@@ -30,22 +33,24 @@ const SchemeForm: React.FC<SchemeFormProps> = ({ onSubmit }) => {
   const [ageGroup, setAgeGroup] = useState('');
   const [occupation, setOccupation] = useState<Occupation | ''>('');
   const [income, setIncome] = useState('');
+  const [caste, setCaste] = useState<Caste | ''>('');
   const [state, setState] = useState<State | ''>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (occupation && state && ageGroup && income) {
+    if (occupation && state && ageGroup && income && caste) {
       onSubmit({
         name,
         ageGroup,
         occupation,
         income,
+        caste,
         state,
       });
     }
   };
 
-  const isFormValid = ageGroup && occupation && income && state;
+  const isFormValid = ageGroup && occupation && income && caste && state;
 
   return (
     <Card className="w-full max-w-lg mx-auto shadow-card animate-slide-up bg-card border-border">
@@ -121,6 +126,25 @@ const SchemeForm: React.FC<SchemeFormProps> = ({ onSubmit }) => {
                 <SelectItem value="below25L">{t('incomeBelow25L')}</SelectItem>
                 <SelectItem value="25Lto5L">{t('income25Lto5L')}</SelectItem>
                 <SelectItem value="above5L">{t('incomeAbove5L')}</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Caste Category */}
+          <div className="space-y-2">
+            <Label htmlFor="caste" className="flex items-center gap-2 text-foreground">
+              <Users className="w-4 h-4 text-primary" />
+              {t('caste')}
+            </Label>
+            <Select value={caste} onValueChange={(value: Caste) => setCaste(value)}>
+              <SelectTrigger className="bg-background border-border">
+                <SelectValue placeholder={t('selectCaste')} />
+              </SelectTrigger>
+              <SelectContent className="bg-popover border-border">
+                <SelectItem value="general">{t('general')}</SelectItem>
+                <SelectItem value="obc">{t('obc')}</SelectItem>
+                <SelectItem value="sc">{t('sc')}</SelectItem>
+                <SelectItem value="st">{t('st')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
