@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# Scheme Finder Pro
 
-## Project info
+Build a simple multilingual web app named “SchemeMitra”.
+Purpose
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+SchemeMitra helps users find eligible government schemes based on basic details and redirects them to official government websites.
+The app is for awareness only and does not handle applications.
 
-## How can I edit this code?
+🔹 FIND MY SCHEMES – INPUT FORM
 
-There are several ways of editing your application.
+Fields:
 
-**Use Lovable**
+Name (optional text)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Age Group (Below 25 / 25–60 / Above 60)
 
-Changes made via Lovable will be committed automatically to this repo.
+Occupation (Student / Farmer / Worker / Unemployed)
 
-**Use your preferred IDE**
+Annual Income
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Below ₹2.5L
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+₹2.5L–₹5L
 
-Follow these steps:
+Above ₹5L
+
+State (ONLY 3 states):
+
+Telangana
+
+Andhra Pradesh
+
+Karnataka
+
+Button: Find My Schemes
+
+🔹 LANGUAGES
+
+English
+
+Telugu
+
+Hindi
+
+Language selector at top.
+
+🔹 FILTER LOGIC
+
+Show schemes based on Occupation + State
+
+Display Central schemes + selected state schemes only
+
+🔹 SCHEMES (MINIMUM SET WITH LINKS)
+🎓 STUDENT – CENTRAL
+
+National Scholarship Portal
+https://scholarships.gov.in/
+
+🌾 FARMER – CENTRAL
+
+PM-KISAN
+https://pmkisan.gov.in/
+
+🛠️ WORKER – CENTRAL
+
+MNREGA
+https://nrega.nic.in/
+
+🚫 UNEMPLOYED – CENTRAL
+
+PMKVY (Skill Training)
+https://www.skillindiadigital.gov.in/
+
+🏛️ STATE SCHEMES
+Telangana
+
+Rythu Bandhu
+https://rythubandhu.telangana.gov.in/
+
+Andhra Pradesh
+
+YSR Rythu Bharosa
+https://ysrrythubharosa.ap.gov.in/
+
+Karnataka
+
+Vidyasiri Scholarship
+https://ssp.postmatric.karnataka.gov.in/
+
+🔹 RESULT PAGE
+
+For each scheme show:
+
+Scheme Name
+
+Short Description
+
+Official Website Button (redirect only)
+
+This project was built with [Lovable](https://lovable.dev).
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ae67260b-5a64-4e2b-ae02-7ded562758bb).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
